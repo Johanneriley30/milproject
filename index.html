@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Media and Information Languages</title>
+  <style>
+/* ====== REALISTIC SOCIAL MEDIA BUTTONS ====== */
+.socials{
+  display:flex;
+  justify-content:center;
+  gap:16px;
+  margin:10px 0;
+  flex-wrap:wrap;
+}
+
+.socials a{
+  color:white;
+  text-decoration:none;
+  font-weight:700;
+  padding:10px 18px;
+  border-radius:8px;
+  transition:.2s;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 4px 6px rgba(0,0,0,.2);
+  min-width:110px;
+}
+
+/* FACEBOOK */
+.socials a[href*="facebook"]{
+  background:#1877F2;
+}
+.socials a[href*="facebook"]:hover{
+  background:#0d5fd3;
+}
+
+/* INSTAGRAM */
+.socials a[href*="instagram"]{
+  background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);
+}
+.socials a[href*="instagram"]:hover{
+  filter:brightness(1.1);
+}
+
+/* TWITTER */
+.socials a[href*="twitter"]{
+  background:#000000;
+}
+.socials a[href*="twitter"]:hover{
+  background:#222;
+}
+
+/* YOUTUBE */
+.socials a[href*="youtube"]{
+  background:#FF0000;
+}
+.socials a[href*="youtube"]:hover{
+  background:#cc0000;
+}
+
+/* Button press effect */
+.socials a:active{
+  transform:translateY(2px);
+  box-shadow:0 2px 4px rgba(0,0,0,.2);
+}
+
+    :root{
+      /* J&J Brand-inspired colors */
+      --primary:#D81F2A; /* J&J Red */
+      --secondary:#1F2937; /* Dark neutral */
+      --accent:#2563EB; /* educational accent blue */
+      --dark:#111827;
+      --light:#f8fafc;
+    }
+    *{box-sizing:border-box;}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background:var(--light);
+      color:#0f172a;
+      line-height:1.6;
+    }
+
+    header{
+      position:sticky;
+      top:0;
+      background:linear-gradient(90deg,var(--primary),#b91c1c);
+      color:white;
+      z-index:1000;
+      box-shadow:0 2px 8px rgba(0,0,0,.15);
+    }
+
+    .nav-container{
+      max-width:1100px;
+      margin:auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:12px 16px;
+    }
+
+    /* LOGO (TEXT-BASED J&J MARK) */
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:700;
+      font-size:1.25rem;
+      letter-spacing:.4px;
+    }
+    .logo-mark{
+      width:44px;
+      height:44px;
+      border-radius:50%;
+      background:white;
+      color:var(--primary);
+      display:grid;
+      place-items:center;
+      font-weight:900;
+      font-size:1rem;
+      box-shadow:0 0 0 2px rgba(255,255,255,.4);
+    }
+
+    nav{display:flex;align-items:center;gap:16px;}
+    nav a, .drop-btn{
+      color:white;
+      text-decoration:none;
+      font-weight:600;
+      cursor:pointer;
+      background:none;
+      border:none;
+      font-size:1rem;
+    }
+
+    .dropdown{position:relative;}
+    .dropdown-menu{
+      position:absolute;
+      top:140%;left:0;
+      background:white;
+      color:#0f172a;
+      border-radius:10px;
+      box-shadow:0 4px 12px rgba(0,0,0,.12);
+      display:none;
+      min-width:180px;
+    }
+    .dropdown-menu a{
+      display:block;
+      padding:10px 12px;
+      color:#0f172a;
+      font-weight:500;
+      text-decoration:none;
+    }
+    .dropdown-menu a:hover{background:#fee2e2;}
+    .dropdown:hover .dropdown-menu{display:block;}
+
+    /* Hamburger */
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}
+    .hamburger span{width:25px;height:3px;background:white;border-radius:3px;}
+
+    .mobile-menu{
+      display:none;
+      flex-direction:column;
+      background:linear-gradient(90deg,var(--primary),#b91c1c);
+    }
+    .mobile-menu a, .mobile-menu .drop-btn{
+      padding:10px 16px;
+      color:white;
+      text-decoration:none;
+      font-weight:600;
+      border-top:1px solid rgba(255,255,255,.2);
+    }
+
+    /* HERO WITH SCHOOL BACKGROUND */
+    .hero{
+      min-height:60vh;
+      background:url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+      color:white;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:40px 20px;
+      position:relative;
+      background-attachment: fixed;
+    }
+    .hero::before{
+      content:"";
+      position:absolute;inset:0;
+      background:rgba(0,0,0,.6);
+    }
+    .hero-content{position:relative;max-width:780px;}
+    .hero h1{color:#fee2e2;font-size:2.4rem;margin-bottom:6px;}
+    .tagline{
+      font-size:1.1rem;
+      color:#fee2e2;
+      font-weight:500;
+      letter-spacing:.3px;
+    }
+
+    main{max-width:1000px;margin:0 auto;padding:20px 16px;}
+
+    section{
+      margin:20px 0;
+      padding:22px 24px;
+      border-radius:16px;
+      box-shadow:0 2px 6px rgba(0,0,0,.06);
+      opacity:0;
+      transform:translateY(20px);
+      transition:all .6s ease;
+
+      /* === make all sections ready for backgrounds === */
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+    }
+    section.show{opacity:1;transform:none;}
+
+    h1,h2,h3{color:var(--primary);}
+    .icon-list li{list-style:'✔  ';margin-left:18px;}
+
+    /* ABOUT J&J SECTION */
+    .about{
+      border-left:6px solid var(--primary);
+      background-attachment: fixed;
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* FOOTER */
+    footer{
+      background:linear-gradient(90deg,var(--primary),#b91c1c);
+      color:white;
+      padding:28px 16px;
+      text-align:center;
+      margin-top:30px;
+    }
+
+    /* ===================================================== */
+    /* BACKGROUND IMAGE PER TOPIC + LIGHTER OVERLAY + FIXED */
+    /* ===================================================== */
+
+    #media-language{
+      background-image: linear-gradient(to bottom right, rgba(255,255,255,.85), rgba(255,255,255,.8)),
+      url('https://images.unsplash.com/photo-1585123334904-845d60e97b29?auto=format&fit=crop&w=1200&q=80');
+    }
+
+    #text-info{
+      background-image: linear-gradient(to bottom right, rgba(255,255,255,.85), rgba(255,255,255,.8)),
+      url('https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=1200&q=80');
+    }
+
+    #typefaces{
+      background-image: linear-gradient(to bottom right, rgba(255,255,255,.85), rgba(255,255,255,.8)),
+      url('https://images.unsplash.com/photo-1527443154391-507e9dc6c5cc?auto=format&fit=crop&w=1200&q=80');
+    }
+
+    #design{
+      background-image: linear-gradient(to bottom right, rgba(255,255,255,.85), rgba(255,255,255,.8)),
+      url('https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80');
+    }
+
+    #codes{
+      background-image: linear-gradient(to bottom right, rgba(255,255,255,.85), rgba(255,255,255,.8)),
+      url('https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=1200&q=80');
+    }
+
+    #conventions{
+      background-image: linear-gradient(to bottom right, rgba(255,255,255,.85), rgba(255,255,255,.8)),
+      url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80');
+    }
+
+    #audience{
+      background-image: linear-gradient(to bottom right, rgba(255,255,255,.85), rgba(255,255,255,.8)),
+      url('https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=1200&q=80');
+    }
+
+    #about{
+      background-image: linear-gradient(to right, rgba(255,255,255,.85), rgba(255,255,255,.8)),
+      url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80');
+    }
+
+    #contact{
+      background-image: linear-gradient(to bottom right, rgba(255,255,255,.85), rgba(255,255,255,.8)),
+      url('https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1200&q=80');
+    }
+
+    @media(max-width:768px){
+      nav{display:none;}
+      .hamburger{display:flex;}
+
+      /* better performance on mobile */
+      .hero, section, .about {
+        background-attachment: scroll;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="nav-container">
+    <div class="logo">
+      <div class="logo-mark">J&J</div>
+      <span>J&J Media Learning</span>
+    </div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#media-language">Media Language</a>
+      <div class="dropdown">
+        <button class="drop-btn">Lessons ▾</button>
+        <div class="dropdown-menu">
+          <a href="#text-info">Text Information</a>
+	  <a href="definitions.html" onclick="toggleMenu()">Definitions & Terms</a>
+          <a href="#typefaces">Typefaces</a>
+          <a href="#design">Design Principles</a>
+          <a href="#codes">Media Codes</a>
+          <a href="#conventions">Conventions</a>
+          <a href="#audience">Audience</a>
+        </div>
+      </div>
+      <a href="about.html">About J&J</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home" onclick="toggleMenu()">Home</a>
+    <a href="definitions.html">Definitions & Terms</a>
+    <a href="#media-language" onclick="toggleMenu()">Media Language</a>
+    <a href="#text-info" onclick="toggleMenu()">Text Information</a>
+    <a href="#typefaces" onclick="toggleMenu()">Typefaces</a>
+    <a href="#design" onclick="toggleMenu()">Design Principles</a>
+    <a href="#codes" onclick="toggleMenu()">Media Codes</a>
+    <a href="#conventions" onclick="toggleMenu()">Conventions</a>
+    <a href="#audience" onclick="toggleMenu()">Audience</a>
+    <a href="about.html" onclick="toggleMenu()">About J&J</a>
+    <a href="contact.html" onclick="toggleMenu()">Contact</a>
+  </div>
+</header>
+
+<div class="hero" id="home">
+  <div class="hero-content">
+    <h1>Media and Information Languages</h1>
+    <div class="tagline">Learning Media, Shaping Minds</div>
+    <p>Understanding how media creates meaning, how audiences interpret it, and how texts are designed, evaluated, and produced in the digital world.</p>
+  </div>
+</div>
+
+<main>
+  <section id="media-language">
+    <h2>What is Media Language?</h2>
+    <p>Media Language refers to how producers use signs, symbols, and techniques to communicate meaning through advertisements, films, television, and digital media.</p>
+    <ul class="icon-list">
+      <li><strong>Denotative:</strong> Literal meaning.</li>
+      <li><strong>Connotative:</strong> Implied meaning shaped by culture and experience.</li>
+    </ul>
+  </section>
+
+  <section id="text-info">
+    <h2>Text Information & Creators</h2>
+    <p>Key creators of text-based media:</p>
+    <ul class="icon-list">
+      <li>Author</li><li>Writer</li><li>Contributor</li><li>Columnist</li><li>Blogger</li><li>Editor</li><li>Publisher</li>
+    </ul>
+    <h3>Types of Text</h3>
+    <ul class="icon-list">
+      <li><strong>Fiction</strong> – imaginative writing.</li>
+      <li><strong>Nonfiction</strong> – fact-based writing.</li>
+    </ul>
+  </section>
+
+  <section id="typefaces">
+    <h2>Text as Visual Communication</h2>
+    <ul class="icon-list">
+      <li><strong>Serif</strong> – classic and formal.</li>
+      <li><strong>Sans Serif</strong> – clean and modern.</li>
+      <li><strong>Slab Serif</strong> – bold and heavy.</li>
+      <li><strong>Script</strong> – elegant and decorative.</li>
+      <li><strong>Decorative</strong> – artistic and thematic.</li>
+    </ul>
+  </section>
+
+  <section id="design">
+    <h2>Design Principles</h2>
+    <ul class="icon-list">
+      <li>Emphasis</li><li>Appropriateness</li><li>Proximity</li><li>Alignment</li><li>Organization</li><li>Repetition</li><li>Contrast</li>
+    </ul>
+  </section>
+
+  <section id="codes">
+    <h2>Media Codes</h2>
+    <h3>Symbolic Codes</h3>
+    <p>Setting, mise-en-scène, acting, and color.</p>
+    <h3>Technical Codes</h3>
+    <p>Camera work, editing, sound, and lighting.</p>
+    <h3>Written Codes</h3>
+    <p>Visible text, dialogue, and lyrics.</p>
+  </section>
+
+  <section id="conventions">
+    <h2>Types of Conventions</h2>
+    <ul class="icon-list">
+      <li><strong>Form</strong> – expected structure of media.</li>
+      <li><strong>Story</strong> – narrative structure.</li>
+      <li><strong>Genre</strong> – common elements in media types.</li>
+    </ul>
+  </section>
+
+  <section id="audience">
+    <h2>Producers & Audience</h2>
+    <p>Producers analyze audiences through demographics and psychology.</p>
+    <ul class="icon-list">
+      <li>Engagement</li><li>Expectations</li><li>Foreknowledge</li><li>Identification</li><li>Placement</li><li>Research</li>
+    </ul>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About J&J</h2>
+    <p><strong>J&J Media Learning</strong> is an educational initiative dedicated to helping students understand how media works, how information is created, and how meaning is constructed in the digital age.</p>
+    <p>We aim to build critical thinkers who can analyze media responsibly, communicate effectively, and participate meaningfully in a connected world.</p>
+    <p>Our focus areas include media literacy, visual communication, design principles, and audience awareness — all aligned with modern school curricula.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: Jonalynbolima001@email.com</p>
+    <p>Tel: 09926548513</p>
+    <p>Organization: J&J Media Learning</p>
+
+  </section>
+</main>
+
+<footer>
+  <h3>Connect with J&J</h3>
+  <div class="socials">
+
+    <a href="https://www.facebook.com/jonalyn.bolima.2025" target="_blank">Facebook</a>
+    <a href="https://www.instagram.com/j_bolims" target="_blank">Instagram</a>
+    <a href="https://www.twitter.com" target="_blank">Twitter</a>
+    <a href="https://www.youtube.com" target="_blank">YouTube</a>
+  </div>
+  <p>© J&J Media Learning • Media and Information Languages |
+<a href="definitions.html" style="color:#fee2e2; text-decoration:underline;">Definitions & Terms</a>
+</p>
+
+</footer>
+
+<script>
+function toggleMenu(){
+  const m=document.getElementById('mobileMenu');
+  m.style.display = m.style.display==='flex' ? 'none' : 'flex';
+}
+
+// Smooth reveal animation on scroll
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('show'); });
+},{threshold:0.15});
+
+document.querySelectorAll('section').forEach(s=>observer.observe(s));
+
+// Smooth scroll
+const links = document.querySelectorAll('a[href^="#"]');
+links.forEach(a=>{
+  a.addEventListener('click',e=>{
+    const id=a.getAttribute('href');
+    if(id.startsWith('#')){
+      e.preventDefault();
+      document.querySelector(id).scrollIntoView({behavior:'smooth'});
+    }
+  });
+});
+</script>
+</body>
+</html>
+
